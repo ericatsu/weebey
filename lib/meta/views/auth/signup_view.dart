@@ -17,125 +17,129 @@ class SignUpView extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: darkColor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          vSizedBox3,
-          vSizedBox2,
-          Container(
-            color: Colors.red,
-            child: Row(
-              children: [
-                IconButton(onPressed: () {},
-                    icon: Icon(
-                      EvaIcons.arrowIosBackOutline, color: Colors.white,))
-              ],
-            ),
-          ),
-          vSizedBox4,
-          Container(color: bgColor,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Hey there!",
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.w900,
-                      color: whiteColor
-                  ),),
-                Text("Welcome to the Party!",
-                  style: TextStyle(
-                      fontSize: 26,
-                      fontWeight: FontWeight.w900,
-                      color: whiteColor
-                  ),),
-                Text("Fill in your details.",
-                  style: TextStyle(
-                      fontSize: 26,
-                      fontWeight: FontWeight.w900,
-                      color: whiteColor
-                  ),)
-              ],
-            ),
-          ),
-          vSizedBox3,
-          vSizedBox1,
-          Container(
-            child: Column(
-              children: [
-                vSizedBox1,
-                stylishTextField(
-                  "Name",nameController ),
-                vSizedBox1,
-                stylishTextField(
-                    "Email",emailController ),
-                vSizedBox1,
-                stylishTextField(
-                    "Password",passwordController ),
-                RichText(text: TextSpan(
-                 children: <TextSpan>[
-                   TextSpan(
-                     text: "Already have an account? ",
-                     style: TextStyle(
-                       color: textColor,
-                       fontWeight: FontWeight.w700,
-                       fontFamily: "Montserrat"
-                     ),
-                   ),
-                   TextSpan(
-                     text: "Login",
-                     recognizer: TapGestureRecognizer()..onTap =
-                     () {
-                       Navigator.pushReplacement(
-                         context,
-                         PageTransition(
-                           child: LoginView(),
-                           type: PageTransitionType.rightToLeft
-                         )
-                       );
-                     },
-                     style: TextStyle(
-                         color: textColor,
-                         fontWeight: FontWeight.bold,
-                         fontFamily: "Montserrat"
-                     ),
-                   ),
-                 ]
-                )
-                ),
-                vSizedBox2,
-                Container(
-                  width: 300.0,
-                  height: 50.0,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(1),
-                    borderRadius: BorderRadius.circular(18)),
-                  child: Center(
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w900,
-                        fontFamily: "Montserrat"
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ),
-          vSizedBox4,
-          Container(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            vSizedBox3,
+            vSizedBox1,
+            Container(
+              child: Row(
+                children: [
+                  IconButton(onPressed: () {},
+                      icon: Icon(
+                        EvaIcons.arrowIosBackOutline, color: Colors.white,))
+                ],
               ),
             ),
-          )
-        ],
+            vSizedBox4,
+            Container(color: bgColor,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Hey there!",
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.w900,
+                        color: whiteColor
+                    ),),
+                  Text("Welcome to the Party!",
+                    style: TextStyle(
+                        fontSize: 26,
+                        fontWeight: FontWeight.w900,
+                        color: whiteColor
+                    ),),
+                  Text("Fill in your details.",
+                    style: TextStyle(
+                        fontSize: 26,
+                        fontWeight: FontWeight.w900,
+                        color: whiteColor
+                    ),)
+                ],
+              ),
+            ),
+            vSizedBox3,
+            vSizedBox1,
+            Container(
+              child: Column(
+                children: [
+                  vSizedBox1,
+                  stylishTextField(
+                    "Name",nameController ),
+                  vSizedBox1,
+                  stylishTextField(
+                      "Email",emailController ),
+                  vSizedBox1,
+                  stylishTextField(
+                      "Password",passwordController ),
+                  RichText(text: TextSpan(
+                   children: <TextSpan>[
+                     TextSpan(
+                       text: "Already have an account? ",
+                       style: TextStyle(
+                         color: textColor,
+                         fontWeight: FontWeight.w700,
+                         fontFamily: "Montserrat"
+                       ),
+                     ),
+                     TextSpan(
+                       text: "Login",
+                       recognizer: TapGestureRecognizer()..onTap =
+                       () {
+                         Navigator.pushReplacement(
+                           context,
+                           PageTransition(
+                             child: LoginView(),
+                             type: PageTransitionType.rightToLeft
+                           )
+                         );
+                       },
+                       style: TextStyle(
+                           color: textColor,
+                           decoration: TextDecoration.underline,
+                           fontSize: 18,
+                           fontWeight: FontWeight.bold,
+                           fontFamily: "Montserrat"
+                       ),
+                     ),
+                   ]
+                  )
+                  ),
+                  vSizedBox2,
+                  Container(
+                    width: 300.0,
+                    height: 50.0,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(1),
+                      borderRadius: BorderRadius.circular(18)),
+                    child: Center(
+                      child: Text(
+                        "Sign Up",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w900,
+                          fontFamily: "Montserrat"
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            vSizedBox4,
+            Container(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
